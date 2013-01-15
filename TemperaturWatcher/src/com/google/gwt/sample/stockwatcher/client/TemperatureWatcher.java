@@ -114,13 +114,13 @@ public class TemperatureWatcher implements EntryPoint {
 		temperatureFlextable2.getCellFormatter().addStyleName(0, 4, "watchListRemoveColumn");
 	
 		
-		//DRAG AND DROP
-		RootPanel.get().setPixelSize(1000,1000);
-		PickupDragController dragController = new PickupDragController(RootPanel.get(),true);
-		Image img = new Image("http://code.google.com/webtoolkit/logo-185x175.png");
-		RootPanel.get().add(img,40,30);
-		dragController.makeDraggable(img);
-		//
+//		//DRAG AND DROP
+//		RootPanel.get().setPixelSize(1000,1000);
+//		PickupDragController dragController = new PickupDragController(RootPanel.get(),true);
+//		Image img = new Image("http://code.google.com/webtoolkit/logo-185x175.png");
+//		RootPanel.get().add(img,40,30);
+//		dragController.makeDraggable(img);
+//		//
 	
 		mainPanel.add(errorMsgLabel);
 		// Assemble Main panel.
