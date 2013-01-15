@@ -1,0 +1,2 @@
+serviceClass: com.google.gwt.sample.stockwatcher.client.TemperatureService
+path: 09893C0BA8162D8F03F0458F3B603934.gwt.rpc
