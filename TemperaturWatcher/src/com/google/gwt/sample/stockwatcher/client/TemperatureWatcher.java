@@ -59,17 +59,17 @@ public class TemperatureWatcher implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		//Create table for stock data.
-		temperatureFlextable.addTableListener(new TableListener(){
-
-			@Override
-			@Deprecated
-			public void onCellClicked(SourcesTableEvents sender, int row, int cell) {
-				setCurrentPlace(temperatureFlextable.getText(row, 0),temperatureFlextable.getText(row, 1), temperatureFlextable.getText(row, 2));
-				dragController.dragStart();
-				System.out.println("in the on cell clicked");
-			}
-			
-		});
+//		temperatureFlextable.addTableListener(new TableListener(){
+//
+//			@Override
+//			@Deprecated
+//			public void onCellClicked(SourcesTableEvents sender, int row, int cell) {
+//				setCurrentPlace(temperatureFlextable.getText(row, 0),temperatureFlextable.getText(row, 1), temperatureFlextable.getText(row, 2));
+//				dragController.dragStart();
+//				System.out.println("in the on cell clicked");
+//			}
+//			
+//		});
 		temperatureFlextable.setText(0, 0, "Country");
 		temperatureFlextable.setText(0, 1, "Area");
 		temperatureFlextable.setText(0, 2, "City");
@@ -112,7 +112,8 @@ public class TemperatureWatcher implements EntryPoint {
 				//	    stocksFlexTable.getCellFormatter().addStyleName(0, 2, "watchListNumericColumn");
 		temperatureFlextable2.getCellFormatter().addStyleName(0, 3, "watchListRemoveColumn");
 		temperatureFlextable2.getCellFormatter().addStyleName(0, 4, "watchListRemoveColumn");
-	
+		PickupDragController dragController2 = new PickupDragController(RootPanel.get(),true);
+		dragController2.makeDraggable(temperatureFlextable);
 		
 //		//DRAG AND DROP
 //		RootPanel.get().setPixelSize(1000,1000);
@@ -223,7 +224,7 @@ public class TemperatureWatcher implements EntryPoint {
 		Widget areaWidget = temperatureFlextable.getWidget(row, 1);
 		Widget cityWidget = temperatureFlextable.getWidget(row, 2);
 		// Add a button to remove this stock from the table.
-		
+	
 		
 		Button removeStockButton = new Button("x");
 		removeStockButton.addStyleDependentName("remove");
